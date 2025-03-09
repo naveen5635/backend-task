@@ -86,19 +86,7 @@ npx serve .
 #### **➤ Apply for a Job**
 ```json
 {
-  "query": "mutation { 
-  applyForJob(
-    job_id: "1", 
-    applicant_name: "Naveen", 
-    applicant_email: "naveen@example.com", 
-    cover_letter: "I'm interested in this job!"
-  ) { 
-    id 
-    applicant_name 
-    applicant_email 
-  } 
-}
-"
+  "query": "mutation { applyForJob( job_id: "1", applicant_name: "Naveen", applicant_email: "naveen@example.com", cover_letter: "I'm interested in this job!" ) { id applicant_name applicant_email } }"
 }
 ```
 
