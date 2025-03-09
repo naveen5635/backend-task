@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Job Board</h1>
+
+        <!-- available-jobs -->
+        <section id="jobs-section">
+            <h2>Available Jobs</h2>
+            <div id="job-cards"></div>
+        </section>
+
+        <!-- apply-job-form -->
+        <section id="apply-section">
+            <h2>Apply for a Job</h2>
+            <form id="application-form">
+                <label for="job-select">Select Job</label>
+                <select id="job-select" required></select>
+
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="John Doe" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" placeholder="johndoe@example.com" required>
+
+                <label for="cover-letter">Cover Letter</label>
+                <textarea id="cover-letter" placeholder="Write your cover letter here..." required></textarea>
+
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+            <p id="success-message" class="hidden">Application submitted successfully! ✅</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
