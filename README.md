@@ -80,7 +80,7 @@ npx serve .
 #### **➤ Get a Specific Job**
 ```json
 {
-  "query": "query { job(id: \"1\") { title description company location } }"
+  "query": "query { job(id: 1) { title description company location } }"
 }
 ```
 #### **➤ Apply for a Job**
