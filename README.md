@@ -1,7 +1,7 @@
-# Backend for Job Board Application
+# Backend Task
 
 ## 📌 Overview
-This is a **backend for job board application** that enables users to **view job listings** and **apply for jobs**. It integrates **PostgreSQL** for managing job postings, **MongoDB** for storing job applications, and **GraphQL** for efficient API queries. The frontend is built with **HTML, CSS, and JavaScript**, providing a seamless user experience.
+This is a **backend** that enables users to **view job listings** and **apply for jobs**. It integrates **PostgreSQL** for managing job postings, **MongoDB** for storing job applications, and **GraphQL** for efficient API queries. The frontend is built with **HTML, CSS, and JavaScript**, providing a seamless user experience.
 
 ## 🚀 Features
 - **Job Listings**: Fetch job postings from PostgreSQL.
@@ -27,7 +27,7 @@ DB_HOST=localhost
 DB_NAME=job_board
 DB_PASSWORD=your_postgres_password
 DB_PORT=5432
-MONGO_URI=your_mongouri
+MONGO_URI=mongodb://localhost:27017/db_name
 ```
 ### 3️⃣ Set Up Databases
 #### **PostgreSQL (Jobs Table)**
@@ -69,38 +69,59 @@ npx serve .
 
 ---
 
-## 🔗 API Endpoints
+## 🔗 API Endpoints & Postman Testing
 ### **GraphQL API (`http://localhost:5000/graphql`)**
-#### **➤ Get All Jobs**
-```graphql
-query {
-  jobs {
-    id
-    title
-    company
-    location
-  }
+#### **➤ Get All Jobs** (POST request in Postman)
+```json
+{
+  "query": "query { jobs { id title company location } }"
 }
 ```
 #### **➤ Get a Specific Job**
-```graphql
-query {
-  job(id: "1") {
-    title
-    description
-    company
-    location
-  }
+```json
+{
+  "query": "query { job(id: \"1\") { title description company location } }"
 }
 ```
 #### **➤ Apply for a Job**
-```graphql
-mutation {
-  applyForJob(job_id: "1", applicant_name: "naveen", applicant_email: "naveen@example.com", cover_letter: "I'm interested in this job!") {
-    id
-    applicant_name
-    applicant_email
-  }
+```json
+{
+  "query": "mutation { applyForJob(job_id: \"1\", applicant_name: \"Naveen\", applicant_email: \"naveen@example.com\", cover_letter: \"I'm interested in this job!\") { id applicant_name applicant_email } }"
+}
+```
+
+### **REST API Endpoints for Postman Testing**
+#### **➤ Get All Jobs**
+- **Method:** GET
+- **URL:** `http://localhost:5000/jobs`
+
+#### **➤ Get a Job by ID**
+- **Method:** GET
+- **URL:** `http://localhost:5000/jobs/:id`
+
+#### **➤ Create a New Job**
+- **Method:** POST
+- **URL:** `http://localhost:5000/jobs`
+- **Body (JSON):**
+```json
+{
+  "title": "Software Engineer",
+  "description": "Develop and maintain software applications",
+  "company": "Tech Corp",
+  "location": "Remote"
+}
+```
+
+#### **➤ Submit a Job Application**
+- **Method:** POST
+- **URL:** `http://localhost:5000/applications`
+- **Body (JSON):**
+```json
+{
+  "job_id": "2",
+  "applicant_name": "Joy",
+  "applicant_email": "joy@example.com",
+  "cover_letter": "I am interested in this position."
 }
 ```
 
