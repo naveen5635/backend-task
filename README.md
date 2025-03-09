@@ -90,43 +90,6 @@ npx serve .
 }
 ```
 
-### **REST API Endpoints for Postman Testing**
-#### **➤ Get All Jobs**
-- **Method:** GET
-- **URL:** `http://localhost:5000/jobs`
-
-#### **➤ Get a Job by ID**
-- **Method:** GET
-- **URL:** `http://localhost:5000/jobs/:id`
-
-#### **➤ Create a New Job**
-- **Method:** POST
-- **URL:** `http://localhost:5000/jobs`
-- **Body (JSON):**
-```json
-{
-  "title": "Software Engineer",
-  "description": "Develop and maintain software applications",
-  "company": "Tech Corp",
-  "location": "Remote"
-}
-```
-
-#### **➤ Submit a Job Application**
-- **Method:** POST
-- **URL:** `http://localhost:5000/applications`
-- **Body (JSON):**
-```json
-{
-  "job_id": "2",
-  "applicant_name": "Joy",
-  "applicant_email": "joy@example.com",
-  "cover_letter": "I am interested in this position."
-}
-```
-
----
-
 ## 🚀 Deployment Guide
 ### **Backend Deployment**
 1. **Deploy PostgreSQL & MongoDB on a cloud provider**
