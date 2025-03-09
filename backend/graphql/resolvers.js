@@ -24,7 +24,7 @@ const resolvers = {
             return result.rows[0];
         },
         applyForJob: async (_, { job_id, applicant_name, applicant_email, cover_letter }) => {
-            console.log("🔍 Received Application Data:", job_id, applicant_name, applicant_email, cover_letter);
+            console.log("application-data:", job_id, applicant_name, applicant_email, cover_letter);
             
             try {
                 // save-job_id-as-a-str, from-psql
