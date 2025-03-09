@@ -27,7 +27,7 @@ DB_HOST=localhost
 DB_NAME=job_board
 DB_PASSWORD=your_postgres_password
 DB_PORT=5432
-MONGO_URI=mongodb://localhost:27017/db_name
+MONGO_URI=your_mongouri
 ```
 ### 3️⃣ Set Up Databases
 #### **PostgreSQL (Jobs Table)**
