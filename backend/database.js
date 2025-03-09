@@ -2,7 +2,7 @@ const { Pool } = require("pg");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// PostgreSQL Connection
+// postgresql-connection
 const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -11,7 +11,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
 
-// MongoDB Connection
+// mongodb-connection
 const connectMongoDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
