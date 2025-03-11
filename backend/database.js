@@ -15,9 +15,9 @@ const pool = new Pool({
 const connectMongoDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-        console.log("mongodb: done ✅");
+        console.log("mongodb: done");
     } catch (err) {
-        console.error("mongodb: error ❌", err);
+        console.error("mongodb: error", err);
         process.exit(1);
     }
 };
